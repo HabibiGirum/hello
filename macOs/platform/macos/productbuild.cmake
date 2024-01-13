@@ -13,8 +13,8 @@ set(CPACK_COMMAND_PKGBUILD "${CPACK_COMMAND_PRODUCTBUILD}")
 
 install(
   FILES
-    "./macpack/control/pkg/io.osquery.agent.conf"
-    "./macpack/control/pkg/io.osquery.agent.plist"
+    "macOs/platform/macos/macpack/control/pkg/io.osquery.agent.conf"
+    "macOs/platform/macos/macpack/control/pkg/io.osquery.agent.plist"
 
   DESTINATION
     "/private/var/osquery"
