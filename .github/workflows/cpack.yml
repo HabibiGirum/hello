@@ -1,0 +1,38 @@
+name: cpack
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install CMake
+        run: |
+          brew install cmake
+
+      - name: Create build directory
+        run: mkdir build
+
+      - name: Run CMake and CPack
+        run: |
+          cd build
+          sudo cmake ..
+          sudo cpack
+
+      # - name: Execute post-install script
+        # run: |
+          # cd build
+          # ./postinstall.sh  # Execute the post-install script
+
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: build/Vistar--1.macos.pkg
