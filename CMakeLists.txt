@@ -22,9 +22,9 @@ include("macOs/platform/macos/productbuild.cmake")
 
 
 # Disable CPack license checking
-set(CPACK_PACKAGE_RELOCATABLE ON)
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
-set(CPACK_SKIP_LICENSE_CHECK ON)
+# set(CPACK_PACKAGE_RELOCATABLE ON)
+# set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
+# set(CPACK_SKIP_LICENSE_CHECK ON)
 if(APPLE)
   set(CPACK_GENERATOR "productbuild")
 endif()
