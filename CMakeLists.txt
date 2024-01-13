@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17.5)
 
-project("Vistar")
+project("osquery")
 
 set(OSQUERY_DATA_PATH "" CACHE PATH "osquery package data")
 set(CPACK_PACKAGE_VERSION "" CACHE STRING "osquery package version")
@@ -9,7 +9,7 @@ set(CPACK_PACKAGE_VERSION "1.0.0")
 
 set(CPACK_PACKAGE_DESCRIPTION "osquery is an operating system instrumentation toolchain.")
 set(CPACK_COMPONENT_OSQUERY_DESCRIPTION "${CPACK_PACKAGE_DESCRIPTION}")
-set(CPACK_PACKAGE_NAME "Vistar")
+set(CPACK_PACKAGE_NAME "osquery")
 
 #######################
 
@@ -23,10 +23,10 @@ set(CPACK_COMMAND_PKGBUILD "${CPACK_COMMAND_PRODUCTBUILD}")
     # "${CMAKE_CURRENT_SOURCE_DIR}/macOs/platform/macos/macpack/control/pkg/io.osquery.agent.plist"
 # 
   # DESTINATION
-    # "/private/var/Vistar"
+    # "/private/var/osquery"
 # 
   # COMPONENT
-    # Vistar
+    # osquery
 # )
 
 include("macOs/platform/common.cmake")
@@ -47,7 +47,7 @@ set(CPACK_SKIP_LICENSE_CHECK ON)
 
 include(CPack)
 
-cpack_add_component("Vistar"
+cpack_add_component("osquery"
   DISPLAY_NAME "Main binaries and tools"
   REQUIRED
 )
