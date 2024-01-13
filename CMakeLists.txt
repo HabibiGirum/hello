@@ -30,7 +30,7 @@ set(CPACK_COMMAND_PKGBUILD "${CPACK_COMMAND_PRODUCTBUILD}")
 # )
 
 include("macOs/platform/common.cmake")
-include("macOs/platform/macos/productbuild.cmake")
+# include("macOs/platform/macos/productbuild.cmake")
 
 #############
 
