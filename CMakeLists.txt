@@ -41,6 +41,8 @@ include("macOs/platform/macos/productbuild.cmake")
 # include("osquery-packaging/platform/macos/productbuild.cmake")
 
 # Disable CPack license checking
+set(CPACK_PACKAGE_RELOCATABLE ON)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
 set(CPACK_SKIP_LICENSE_CHECK ON)
 
 include(CPack)
