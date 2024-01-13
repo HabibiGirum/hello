@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: build/Vistar--1.macos.pkg
+          path: build

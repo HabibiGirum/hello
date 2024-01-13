@@ -8,7 +8,7 @@
 #
 
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
-set(CPACK_COMMAND_PRODUCTBUILD "macpack/control/pkg/productbuild.sh")
+set(CPACK_COMMAND_PRODUCTBUILD "macOs/platform/macos/macpack/control/pkg/productbuild.sh")
 set(CPACK_COMMAND_PKGBUILD "${CPACK_COMMAND_PRODUCTBUILD}")
 
 install(
