@@ -17,33 +17,17 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
 set(CPACK_COMMAND_PRODUCTBUILD "${CMAKE_CURRENT_SOURCE_DIR}/macOs/platform/macos/macpack/control/pkg/productbuild.sh")
 set(CPACK_COMMAND_PKGBUILD "${CPACK_COMMAND_PRODUCTBUILD}")
 
-# install(
-  # FILES
-    # "${CMAKE_CURRENT_SOURCE_DIR}/macOs/platform/macos/macpack/control/pkg/io.osquery.agent.conf"
-    # "${CMAKE_CURRENT_SOURCE_DIR}/macOs/platform/macos/macpack/control/pkg/io.osquery.agent.plist"
-# 
-  # DESTINATION
-    # "/private/var/osquery"
-# 
-  # COMPONENT
-    # osquery
-# )
-
 include("macOs/platform/common.cmake")
 include("macOs/platform/macos/productbuild.cmake")
 
-#############
-
-# include("osquery-packaging/platform/common.cmake")
-# set(CPACK_PACKAGE_RELOCATABLE ON)
-# set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/macOs/platform/macos/macpack/control/LICENSE.txt")
-
-# include("osquery-packaging/platform/macos/productbuild.cmake")
 
 # Disable CPack license checking
 set(CPACK_PACKAGE_RELOCATABLE ON)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
 set(CPACK_SKIP_LICENSE_CHECK ON)
+if(APPLE)
+  set(CPACK_GENERATOR "productbuild")
+endif()
 
 include(CPack)
 
